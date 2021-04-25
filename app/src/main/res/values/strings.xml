@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">IntroductionToAndroidGB</string>
+    <string name="button_name_num_8">8</string>
+    <string name="button_name_num_7">7</string>
+    <string name="button_name_num_6">6</string>
+    <string name="button_name_num_5">5</string>
+    <string name="button_name_num_4">4</string>
+    <string name="button_name_num_3">3</string>
+    <string name="button_name_num_2">2</string>
+    <string name="button_name_num_1">1</string>
+    <string name="button_name_num_0">0</string>
+    <string name="button_name_num_9">9</string>
+    <string name="button_name_minus">-</string>
+    <string name="button_name_equally">=</string>
+    <string name="button_name_multiply">*</string>
+    <string name="button_name_split">/</string>
+    <string name="button_name_wipe">C</string>
+    <string name="button_name_brackets">( )</string>
+    <string name="button_name_percent">%</string>
+    <string name="button_name_comma">,</string>
+    <string name="button_name_invert">+/-</string>
+    <string name="button_name_plus">+</string>
 </resources>
