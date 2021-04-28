@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
+import com.example.introductiontoandroidgb.calculator.Calculator;
 
 public class CalculatorActivity extends AppCompatActivity {
     private char OPERATION;
@@ -17,18 +17,18 @@ public class CalculatorActivity extends AppCompatActivity {
     private static final char MINUS = '-';
     private static final char PLUS = '+';
     private static final int MAX_LENGTH_TEXTVIEW = 11;
-    private Double value1;
-    private Double value2;
+
     private TextView tv_text;
     private TextView tv_calculateHistory;
-    private DecimalFormat numberFormat;
+
+    private Calculator calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+        calculator = new Calculator();
 
-        numberFormat = new DecimalFormat("#.##");
         initView();
     }
 
@@ -83,8 +83,8 @@ public class CalculatorActivity extends AppCompatActivity {
                         "Нельзя ввести больше " + MAX_LENGTH_TEXTVIEW + " цифр",
                         Toast.LENGTH_SHORT).show();
             } else {
-                tv_text.setText(tv_text.getText() + num);
-                tv_calculateHistory.setText(tv_calculateHistory.getText() + num);
+                setTheValue(tv_text, tv_text.getText() + num);
+                calculateHistory(num);
             }
         });
     }
@@ -93,37 +93,49 @@ public class CalculatorActivity extends AppCompatActivity {
     public void enteringAValue(Button name, String sign, char operation) {
         name.setOnClickListener(v -> {
             OPERATION = operation;
-            value1 = Double.parseDouble(tv_text.getText().toString());
-            tv_calculateHistory.setText(tv_calculateHistory.getText() + sign);
-            tv_text.setText("");
+            calculator.setValue1(valueOfValues());
+            calculateHistory(sign);
+            setTheValue(tv_text, "");
         });
     }
 
     private void btnWipe(Button name) {
         name.setOnClickListener(v -> {
-            tv_text.setText("");
-            tv_calculateHistory.setText("");
+            setTheValue(tv_text, "");
+            setTheValue(tv_calculateHistory, "");
         });
     }
 
     private void calculate(Button name) {
         name.setOnClickListener(v -> {
-            value2 = Double.parseDouble(tv_text.getText().toString());
-//            tv_calculateHistory.setText("");
+            calculator.setValue2(valueOfValues());
             switch (OPERATION) {
                 case (PLUS):
-                    tv_text.setText(numberFormat.format(value1 + value2));
+                    setTheValue(tv_text,calculator.calcPlus());
                     break;
                 case (MINUS):
-                    tv_text.setText(numberFormat.format(value1 - value2));
+                    setTheValue(tv_text,calculator.calcMinus());
                     break;
                 case (MULTIPLY):
-                    tv_text.setText(numberFormat.format(value1 * value2));
+                    setTheValue(tv_text,calculator.calcMultiply());
                     break;
                 case (SPLIT):
-                    tv_text.setText(numberFormat.format(value1 / value2));
+                    setTheValue(tv_text,calculator.calcSplit());
                     break;
             }
         });
+    }
+
+    private void setTheValue(TextView text, String s) {
+        text.setText(s);
+    }
+
+    private double valueOfValues() {
+        return Double.parseDouble(tv_text.getText().toString());
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void calculateHistory(String value) {
+        tv_calculateHistory.setText(tv_calculateHistory.getText() + value);
     }
 }
