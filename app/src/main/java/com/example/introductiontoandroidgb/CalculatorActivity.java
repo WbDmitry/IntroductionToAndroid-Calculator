@@ -20,6 +20,7 @@ public class CalculatorActivity extends AppCompatActivity {
     private Double value1;
     private Double value2;
     private TextView tv_text;
+    private TextView tv_calculateHistory;
     private DecimalFormat numberFormat;
 
     @Override
@@ -33,6 +34,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
     private void initView() {
         tv_text = findViewById(R.id.textView);
+        tv_calculateHistory = findViewById(R.id.calculationHistory);
 
         Button buttonNum0 = findViewById(R.id.button_num_0);
         Button buttonNum1 = findViewById(R.id.button_num_1);
@@ -64,10 +66,10 @@ public class CalculatorActivity extends AppCompatActivity {
         enteringAValue(buttonNum9, "9");
         enteringAValue(buttonComma, ".");
 
-        enteringAValue(buttonSplit, '/');
-        enteringAValue(buttonMultiply, '*');
-        enteringAValue(buttonMinus, '-');
-        enteringAValue(buttonPlus, '+');
+        enteringAValue(buttonSplit, "/",'/');
+        enteringAValue(buttonMultiply, "*",'*');
+        enteringAValue(buttonMinus, "-",'-');
+        enteringAValue(buttonPlus, "+",'+');
 
         calculate(buttonEqually);
         btnWipe(buttonWipe);
@@ -82,15 +84,17 @@ public class CalculatorActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             } else {
                 tv_text.setText(tv_text.getText() + num);
+                tv_calculateHistory.setText(tv_calculateHistory.getText() + num);
             }
         });
     }
 
-    public void enteringAValue(Button name, char operation) {
+    @SuppressLint("SetTextI18n")
+    public void enteringAValue(Button name, String sign, char operation) {
         name.setOnClickListener(v -> {
             OPERATION = operation;
             value1 = Double.parseDouble(tv_text.getText().toString());
-            tv_text.setHint(numberFormat.format(value1) + operation);
+            tv_calculateHistory.setText(tv_calculateHistory.getText() + sign);
             tv_text.setText("");
         });
     }
@@ -98,13 +102,14 @@ public class CalculatorActivity extends AppCompatActivity {
     private void btnWipe(Button name) {
         name.setOnClickListener(v -> {
             tv_text.setText("");
-            tv_text.setHint("Введите число");
+            tv_calculateHistory.setText("");
         });
     }
 
     private void calculate(Button name) {
         name.setOnClickListener(v -> {
             value2 = Double.parseDouble(tv_text.getText().toString());
+//            tv_calculateHistory.setText("");
             switch (OPERATION) {
                 case (PLUS):
                     tv_text.setText(numberFormat.format(value1 + value2));
