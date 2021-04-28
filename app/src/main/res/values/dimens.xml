@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Переменные для кнопок-->
+    <dimen name="button_textSize">25sp</dimen>
+    <dimen name="button_margin">1dp</dimen>
+    <dimen name="button_width">0dp</dimen>
+    <dimen name="button_height">0dp</dimen>
+    <dimen name="button_insetTopBottom">0dp</dimen>
+
+    <!--    Переменные для текста-->
+    <dimen name="textview_padding">30dp</dimen>
+    <dimen name="textview_textSize">80sp</dimen>
+    <dimen name="textview_marginBottom">17dp</dimen>
+</resources>
