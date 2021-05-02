@@ -26,15 +26,15 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator);
+        setContentView(R.layout.activity_calculator_new);
         calculator = new Calculator();
 
         initView();
     }
 
     private void initView() {
-        tv_text = findViewById(R.id.textView);
-        tv_calculateHistory = findViewById(R.id.calculationHistory);
+        tv_text = findViewById(R.id.progressOfOperations);
+        tv_calculateHistory = findViewById(R.id.resultOperations);
 
         Button buttonNum0 = findViewById(R.id.button_num_0);
         Button buttonNum1 = findViewById(R.id.button_num_1);
@@ -66,10 +66,10 @@ public class CalculatorActivity extends AppCompatActivity {
         enteringAValue(buttonNum9, "9");
         enteringAValue(buttonComma, ".");
 
-        enteringAValue(buttonSplit, "/",'/');
-        enteringAValue(buttonMultiply, "*",'*');
-        enteringAValue(buttonMinus, "-",'-');
-        enteringAValue(buttonPlus, "+",'+');
+        enteringAValue(buttonSplit, "/", '/');
+        enteringAValue(buttonMultiply, "*", '*');
+        enteringAValue(buttonMinus, "-", '-');
+        enteringAValue(buttonPlus, "+", '+');
 
         calculate(buttonEqually);
         btnWipe(buttonWipe);
@@ -111,16 +111,16 @@ public class CalculatorActivity extends AppCompatActivity {
             calculator.setValue2(valueOfValues());
             switch (OPERATION) {
                 case (PLUS):
-                    setTheValue(tv_text,calculator.calcPlus());
+                    setTheValue(tv_text, calculator.calcPlus());
                     break;
                 case (MINUS):
-                    setTheValue(tv_text,calculator.calcMinus());
+                    setTheValue(tv_text, calculator.calcMinus());
                     break;
                 case (MULTIPLY):
-                    setTheValue(tv_text,calculator.calcMultiply());
+                    setTheValue(tv_text, calculator.calcMultiply());
                     break;
                 case (SPLIT):
-                    setTheValue(tv_text,calculator.calcSplit());
+                    setTheValue(tv_text, calculator.calcSplit());
                     break;
             }
         });
