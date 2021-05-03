@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/constraintLayout_padding">
+    style="@style/MyMainLayout">
 
     <TextView
         android:id="@+id/resultOperations"
-        android:layout_width="@dimen/textView_width"
-        android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
+        style="@style/MyTextViewStyle"
         android:textSize="@dimen/textView_textSize1"
-        app:layout_constrainedHeight="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/progressOfOperations"
-        android:layout_width="@dimen/textView_width"
-        android:layout_height="wrap_content"
+        style="@style/MyTextViewStyle"
         android:hint="@string/button_name_num_0"
-        android:textAlignment="textEnd"
         android:textSize="@dimen/textView_textSize2"
-        app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultOperations"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/resultOperations" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -40,7 +31,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_wipe"
         style="@style/MyButtonDefault"
-        android:padding="@dimen/button_padding"
         android:text="@string/button_name_wipe"
         app:layout_constraintBottom_toTopOf="@id/button_num_7"
         app:layout_constraintEnd_toStartOf="@id/button_split"
@@ -54,6 +44,7 @@
         style="@style/MyButtonOperations"
         android:layout_marginEnd="@dimen/button_layout_marginEnd"
         android:text="@string/button_name_split"
+        app:backgroundTint="@color/button_operations"
         app:layout_constraintBottom_toTopOf="@id/button_num_9"
         app:layout_constraintEnd_toStartOf="@id/button_multiply"
         app:layout_constraintStart_toEndOf="@id/button_wipe"

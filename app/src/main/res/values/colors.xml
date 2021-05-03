@@ -8,6 +8,9 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white_a">#43FFFFFF</color>
-    <color name="textview_bgColor_a">#CCFFFFFF</color>
-    <color name="button_operations">#FF8800</color>
+    <color name="textview_textColor">#000</color>
+    <color name="button_operations">#F39427</color>
+    <color name="button_textColor">#fff</color>
+    <color name="button_textColor2">#000</color>
+    <color name="main_layout_background">#22272E</color>
 </resources>

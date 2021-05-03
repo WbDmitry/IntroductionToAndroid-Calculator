@@ -8,14 +8,14 @@
     </style>
 
     <style name="MyMainLayout">
-        <item name="android:background">@drawable/main_layout_bg_light</item>
+        <item name="android:background">@drawable/main_layout_bg_dark</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:padding">@dimen/constraintLayout_padding</item>
     </style>
 
     <style name="MyTextViewStyle">
-        <item name="android:textColor">@color/textview_textColor</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">@dimen/textView_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">textEnd</item>
@@ -30,13 +30,13 @@
         <item name="android:padding">@dimen/button_padding</item>
         <item name="android:textSize">@dimen/button_textSize</item>
         <item name="android:textColor">@color/button_textColor</item>
-        <item name="android:backgroundTint">@color/purple_500</item>
+        <item name="android:backgroundTint">@color/main_layout_background</item>
         <item name="layout_constraintHorizontal_weight">1</item>
     </style>
 
     <style name="MyButtonOperations" parent="@style/MyButtonDefault">
         <item name="android:textColor">@color/button_textColor2</item>
-        <item name="android:backgroundTint">@color/button_operations</item>
+        <item name="android:backgroundTint">@color/purple_200</item>
         <item name="android:layout_marginEnd">0dp</item>
     </style>
 </resources>
