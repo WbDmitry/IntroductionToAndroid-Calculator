@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MySwitch" parent="Theme.AppCompat.Light">
-        <!-- активное состояние (30% прозрачности для фона) -->
+    <style name="MySwitch">
         <item name="colorControlActivated">@android:color/holo_green_light</item>
-
-        <!-- неактивное состояние ползунка -->
         <item name="colorSwitchThumbNormal">@android:color/holo_orange_dark</item>
-
-        <!-- цвет дорожки для неактивного состояния (30% прозрачности) -->
         <item name="android:colorForeground">@android:color/darker_gray</item>
+    </style>
+
+    <style name="MyButtonDefault">
+        <item name="android:layout_width">@dimen/button_layout_width</item>
+        <item name="android:layout_height">@dimen/button_layout_height</item>
+        <item name="android:layout_marginEnd">@dimen/button_layout_marginEnd</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textSize">@dimen/button_textSize</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+    </style>
+
+    <style name="MyButtonOperations" parent="@style/MyButtonDefault">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/button_operations</item>
+        <item name="android:layout_marginEnd">0dp</item>
     </style>
 </resources>
