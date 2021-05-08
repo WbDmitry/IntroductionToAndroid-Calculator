@@ -13,4 +13,7 @@
     <color name="button_textColor">#fff</color>
     <color name="button_textColor2">#000</color>
     <color name="main_layout_background">#22272E</color>
+    <color name="test1">#292B7C</color>
+    <color name="test2">#181853</color>
+
 </resources>

@@ -44,7 +44,6 @@
         style="@style/MyButtonOperations"
         android:layout_marginEnd="@dimen/button_layout_marginEnd"
         android:text="@string/button_name_split"
-        app:backgroundTint="@color/button_operations"
         app:layout_constraintBottom_toTopOf="@id/button_num_9"
         app:layout_constraintEnd_toStartOf="@id/button_multiply"
         app:layout_constraintStart_toEndOf="@id/button_wipe"
