@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    Переменные для кнопок-->
-    <dimen name="button_textSize">25sp</dimen>
-    <dimen name="button_margin">1dp</dimen>
-    <dimen name="button_width">0dp</dimen>
-    <dimen name="button_height">0dp</dimen>
-    <dimen name="button_insetTopBottom">0dp</dimen>
+    <!--    Значения для layout-->
+    <dimen name="constraintLayout_padding">10dp</dimen>
+    <dimen name="textView_width">0dp</dimen>
+    <dimen name="textView_height">0dp</dimen>
 
-    <!--    Переменные для текста-->
-    <dimen name="textview_padding">30dp</dimen>
-    <dimen name="textview_textSize">80sp</dimen>
-    <dimen name="textview_marginBottom">17dp</dimen>
+    <!--    Значения для кнопок-->
+    <dimen name="button_layout_width">0dp</dimen>
+    <dimen name="button_layout_height">0dp</dimen>
+    <dimen name="button_layout_marginEnd">7dp</dimen>
+    <dimen name="button_textSize">21sp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+
+    <!--    Значения для текста-->
+    <dimen name="textView_textSize1">21sp</dimen>
+    <dimen name="textView_textSize2">50sp</dimen>
 </resources>
