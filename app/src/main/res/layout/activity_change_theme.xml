@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeThemeActivity">
+
+    <TextView
+        android:id="@+id/TextChangeTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/ChangeThemeVariant"
+        android:textAlignment="textStart"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@id/radioGroupTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextChangeTheme">
+
+        <RadioButton
+            android:id="@+id/theme1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/nameVariant_theme1"
+            android:padding="10dp" />
+
+        <RadioButton
+            android:id="@+id/theme2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/nameVariant_theme2"
+            android:padding="10dp" />
+
+        <RadioButton
+            android:id="@+id/theme3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/nameVariant_theme3"
+            android:padding="10dp" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
