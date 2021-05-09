@@ -3,6 +3,9 @@ package com.example.introductiontoandroidgb;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +14,15 @@ import android.widget.Toast;
 import com.example.introductiontoandroidgb.calculator.Calculator;
 
 public class CalculatorActivity extends AppCompatActivity {
+    private static final String appTheme = "APP_THEME";
+
+    private static final int MYTHEME1 = 0;
+    private static final int MYTHEME2 = 1;
+    private static final int MYTHEME3 = 2;
+
+    private static final String NameSharedPreference = "LOGIN";
+    public static final int REQUEST_CODE = 109;
+
     private char OPERATION;
     private static final char SPLIT = '/';
     private static final char MULTIPLY = '*';
@@ -26,13 +38,21 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme(R.style.MyTheme1));
         setContentView(R.layout.activity_calculator_new);
+
         calculator = new Calculator();
 
         initView();
     }
 
+
     private void initView() {
+        findViewById(R.id.iconChangeTheme).setOnClickListener(v -> {
+            Intent intentChangeThemeActivity = new Intent(this, ChangeThemeActivity.class);
+            startActivityForResult(intentChangeThemeActivity, REQUEST_CODE);
+        });
+
         tv_text = findViewById(R.id.progressOfOperations);
         tv_calculateHistory = findViewById(R.id.resultOperations);
 
@@ -137,5 +157,36 @@ public class CalculatorActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void calculateHistory(String value) {
         tv_calculateHistory.setText(tv_calculateHistory.getText() + value);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                recreate();
+            }
+        }
+    }
+
+    private int getAppTheme(int code) {
+        return codeStyleToStyleId(getCodeStyle(code));
+    }
+
+    public static int codeStyleToStyleId(int code) {
+        switch (code) {
+            case MYTHEME2:
+                return R.style.MyTheme2;
+            case MYTHEME3:
+                return R.style.MyTheme3;
+            case MYTHEME1:
+            default:
+                return R.style.MyTheme1;
+        }
+    }
+
+    private int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPreferences = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        return sharedPreferences.getInt(appTheme, codeStyle);
     }
 }

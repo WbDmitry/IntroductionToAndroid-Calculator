@@ -23,5 +23,5 @@
     <string name="ChangeThemeVariant">Выберите тему:</string>
     <string name="nameVariant_theme1">Светлая + Тёмный циан</string>
     <string name="nameVariant_theme2">Светлая + Оранжевый</string>
-    <string name="nameVariant_theme3">Тёмный + Гелиотроп</string>
+    <string name="nameVariant_theme3">Тёмная + Гелиотроп</string>
 </resources>
